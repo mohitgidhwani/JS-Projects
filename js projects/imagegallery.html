@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        .contianer {
+            /* height: 800px; */
+            width: 1200px;
+            background: rgba(41, 40, 40, 0.599);
+            margin: 100px auto;
+            padding: 10px;
+            position: relative;
+        }
+
+
+
+        .slider {
+            display: flex;
+            gap: 10px;
+        }
+
+        .inner {
+            width: 1100px;
+            height: 200px;
+            background: lightcoral;
+            margin: auto;
+            padding: 0px 10px;
+            border-radius: 10px;
+
+        }
+
+        #change img {
+            object-fit: contain;
+            width: 212px;
+            height: 185px;
+            object-fit: cover;
+            margin-top: 8px;
+            /* filter: brightness(40%); */
+            border-radius: 10px;
+
+        }
+
+
+
+        .result {
+            height: 555px;
+            width: 636px;
+            border-radius: 10px;
+            background: lightcoral;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+             /* display: none; */
+        }
+
+
+        #result1 {
+            height: 555px;
+            width: 636px;
+            object-fit: cover;
+        }
+
+        button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contianer" id="blur">
+
+
+        <div class="inner">
+            <div class="slider" id="change">
+                <img src="img1.jpg" onclick="test(this)" alt="">
+                <img src="img2.jpg" onclick="test(this)" alt="">
+                <img src="img3.jpg" onclick="test(this)" alt="">
+                <img src="img4.jpg" onclick="test(this)" alt="">
+                <img src="img5.jpg" onclick="test(this)" alt="">
+            </div>
+        </div>
+        <div class="inner">
+            <div class="slider" id="change">
+                <img src="https://static.vecteezy.com/system/resources/previews/023/192/562/non_2x/sport-car-running-on-the-road-in-future-city-created-with-generative-ai-free-photo.jpg"
+                    alt="" onclick="test(this)">
+                <img src="img2.jpg" alt="" onclick="test(this)">
+                <img src="img3.jpg" alt="" onclick="test(this)">
+                <img src="img4.jpg" alt="" onclick="test(this)">
+                <img src="img5.jpg" alt="" onclick="test(this)">
+            </div>
+        </div>
+        <div class="inner">
+            <div class="slider" id="change">
+                <img src="https://www.wildnatureimages.com/images/640/070620-014-The-Tetons.jpg" alt=""
+                    onclick="test(this)">
+                <img src="https://plus.unsplash.com/premium_photo-1688645554172-d3aef5f837ce?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwbW91bnRhaW5zfGVufDB8fDB8fHww"
+                    alt="" onclick="test(this)">
+                <img src="https://plus.unsplash.com/premium_photo-1672115680958-54438df0ab82?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW91bnRhaW5zfGVufDB8fDB8fHww"
+                    alt="" onclick="test(this)">
+                <img src="https://static.vecteezy.com/system/resources/previews/026/542/204/non_2x/landscape-natural-beautiful-mountains-and-blue-sky-panorama-photo.jpg"
+                    alt="" onclick="test(this)">
+                <img src="https://t3.ftcdn.net/jpg/00/84/22/12/360_F_84221257_rfefWUrMTssPWFD16GSArJaLodR3sO8a.jpg"
+                    alt="" onclick="test(this)">
+            </div>
+        </div>
+        <div class="inner">
+            <div class="slider" id="change">
+                <img src="img1.jpg" alt="" onclick="test(this)">
+                <img src="img2.jpg" alt="" onclick="test(this)">
+                <img src="img3.jpg" alt="" onclick="test(this)">
+                <img src="img4.jpg" alt="" onclick="test(this)">
+                <img src="img5.jpg" alt="" onclick="test(this)">
+            </div>
+        </div>
+
+        <div class="result" id="showdiv">
+            <img id="result1" src="" alt="">
+            <!-- <button>Del</button> -->
+        </div>
+    </div>
+
+    <script>
+       var res = document.getElementById('result1');
+           div = document.getElementById('showdiv');
+           backimg = document.getElementsByClassName('inner');
+           
+
+           div.style.display = "none"
+
+           console.log(backimg)
+           
+
+   
+       
+       
+        function test(imgs) {
+           
+            
+           
+
+           if(div.style.display == "none")
+           {
+            div.style.display = "block"
+            res.src = imgs.src
+            res.style.display = "block"
+
+            for(i=0;i<backimg.length;i++)
+           {
+            backimg[i].style.filter = 'blur(5px)'
+           }
+            
+           
+           }
+           else{
+             div.style.display = "none"
+
+             for(i=0;i<backimg.length;i++)
+           {
+            backimg[i].style.filter = 'blur(0px)'
+           }
+           }
+             
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

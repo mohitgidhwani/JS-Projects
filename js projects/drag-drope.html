@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+           height: 300px;
+           width: 600px;
+           background: lightblue; 
+           margin: auto;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           gap: 100px;
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .dragzone{
+            height: 200px;
+            width: 200px;
+            background: lightcyan;
+            border: 2px dashed #a2a1a1;
+            object-fit: contain;
+        }
+        .dropzone{
+            height: 200px;
+            width: 200px;
+            background: lightgreen;
+            border: 2px dashed #a2a1a1;
+          
+        }
+
+        img{
+            width: 100%;
+            border: 2px solid red;
+            padding-top: 30px;
+        }
+           
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dragzone x" id="left">
+            <img src="img1.jpg" alt="" id="image" >
+        </div>
+        <div class="dropzone x" id="right">
+           
+        </div>
+    </div>
+    <script>
+       let  leftbox = document.getElementById('left');
+       let  image = document.getElementById('image');
+       let  rightbox = document.getElementById('right');
+
+    function test()
+    {
+         image.addEventListener("dragstart",(e)=>{
+            let select = e.target;
+          
+            rightbox.addEventListener("dragover", (e)=>{
+                e.preventDefault();
+            });
+            rightbox.addEventListener("drop",(e)=>{
+                rightbox.append(select);
+                
+
+            })
+         })
+         setTimeout(test)
+         
+    }
+    test()
+
+    
+
+        
+    </script>
+</body>
+</html>

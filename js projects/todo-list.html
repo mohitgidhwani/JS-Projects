@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="main">
+    <input type="text" id="write">
+    <button onclick="test()">Add</button>
+    <br>
+    <br>
+    <script>
+        write = document.getElementById('write');
+        display = document.getElementById('main');
+
+
+
+
+
+
+
+        function test() {
+
+            const tag = document.createElement('div');
+            tag.className = 'element';
+
+            console.log(tag)
+
+
+
+            tag.style.display = "inline"
+            const del = document.createElement('button');
+            del.className = "remove";
+            console.log(del);
+            del.style.marginLeft = "45px"
+            del.style.display = "block"
+            txt = document.createTextNode('');
+            btntxt1 = document.createTextNode('click');
+            tag.append(txt);
+            del.append(btntxt1);
+            tag.innerHTML = write.value
+            display.append(tag);
+            display.append(del);
+
+
+
+            function delet() {
+                tag.style.display = "none"
+                del.style.display = "none"
+            }
+
+
+            del.addEventListener('click', delet)
+
+        }
+
+    </script>
+</body>
+
+</html>

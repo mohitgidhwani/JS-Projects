@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 500px;
+            width: 600px;
+            background-color: aqua;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .imgbox {
+            height: 300px;
+            width: 300px;
+            background: lightcoral;
+            border: 2px solid black;
+            overflow: hidden;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .show {
+            position: absolute;
+            right: 50px;
+            top: 100px;
+            height: 50px;
+            width: 150px;
+            font-size: 20px;
+
+        }
+
+        form {
+            /* background: lightcoral; */
+            position: absolute;
+            bottom: 100px;
+        }
+
+
+
+        img {
+            height: 300px;
+            width: 300px;
+            filter: contrast();
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="imgbox">
+            <img src=""
+                alt="">
+        </div>
+        <button class="show" onclick=" get()">Show Image</button>
+        <form action="">
+            <label for="">Blur</label>
+            <input type="range" id="blur" onchange="test1()" min="0" max="10" value="0">
+            <label for="">brightness</label>
+            <input type="range" name="" onchange="test2()" id="brightness" min="0" max="200">
+            <label for="">contrast</label>
+            <input type="range" name="" onchange="test3()" id="contrast" min="0" max="200">
+        </form>
+
+    </div>
+    <script>
+
+            image = document.querySelector('img');
+            blurinput = document.getElementById('blur');
+            brightnessinput = document.getElementById('brightness');
+            contrastinput = document.getElementById('contrast')
+            console.log(image, blurinput, brightnessinput);
+
+            function get()
+            {
+                image.src = "https://next-images.123rf.com/index/_next/image/?url=https://assets-cdn.123rf.com/index/static/assets/top-section-bg.jpeg&w=3840&q=75"
+            }
+
+        function test1() {
+           
+
+            x = blurinput.value;
+           
+
+            image.style.filter = 'blur(' + x + 'px)'
+            // image.style.filter = 'brightness(' + y + '%)'
+        }
+
+        function test2()
+        {
+            y = brightnessinput.value;
+
+              image.style.filter = 'brightness(' + y + '%)'
+        }
+
+        function test3()
+        {
+            z = contrastinput.value;
+
+            image.style.filter = 'contrast(' + z + '%)'
+        }
+
+
+
+    </script>
+</body>
+
+</html>

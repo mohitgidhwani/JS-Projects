@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export Table to Excel</title>
+</head>
+<body>
+  <h1>HTML Table to Excel</h1>
+  <table id="myTable" border="1">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>City</th>
+    </tr>
+    <tr>
+      <td>John Doe</td>
+      <td>28</td>
+      <td>New York</td>
+    </tr>
+    <tr>
+      <td>Jane Smith</td>
+      <td>34</td>
+      <td>Los Angeles</td>
+    </tr>
+    <tr>
+      <td>Sam Wilson</td>
+      <td>23</td>
+      <td>Chicago</td>
+    </tr>
+  </table>
+  <br>
+  <button onclick="exportTableToExcel('myTable', 'TableData')">Export to Excel</button>
+
+  <script>
+    function exportTableToExcel(tableID, filename = '') {
+      // Get the table data
+      let table = document.getElementById(tableID);
+      let rows = table.querySelectorAll('tr');
+
+      // Prepare Excel content
+      let csvContent = '';
+      rows.forEach(row => {
+        let cells = row.querySelectorAll('th, td');
+        let rowData = [];
+        cells.forEach(cell => {
+          rowData.push(cell.innerText);
+        });
+        csvContent += rowData.join(',') + '\n';
+      });
+
+      // Create a Blob for the CSV
+      let blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+
+      // Create a link to download
+      let link = document.createElement('a');
+      let url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', filename ? `${filename}.csv` : 'export.csv');
+
+      // Append to the body and trigger the download
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
