@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* https://github.githubassets.com/assets/hero-glow-f6eed469bca2.svg */
+
+
+    .container {
+
+      background: #040d21;
+    }
+
+    .back {
+      background: url(https://github.githubassets.com/assets/hero-glow-f6eed469bca2.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .inner {
+
+      width: 70%;
+      margin: auto;
+    }
+
+    .head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+    }
+
+    .logo {
+      font-size: 35px;
+      color: white;
+    }
+
+    .sign p {
+      font-size: 18px;
+      color: #8193b2;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+
+    .sign span {
+      color: white;
+    }
+
+    .hero {
+      width: 550px;
+      /* height: 300px; */
+      background: #0c162d;
+      border-radius: 10px;
+      margin: 150px auto;
+      color: white;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+    }
+
+    .hero span {
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 25px;
+      font-size: 18px;
+      word-spacing: 10px;
+      color: #8193b2;
+    }
+
+    h3 {
+      color: #00cfc8;
+      word-spacing: 20px;
+      font-size: 15px;
+      margin-top: 20px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      /* background: lightcoral; */
+
+    }
+
+
+
+    .rightarrow i {
+      color: #ea4aaa;
+      font-size: 15px;
+    }
+
+    .form {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .email {
+      width: 360px;
+      /* height: 25px; */
+      padding: 5px 10px 5px 0;
+      font-size: 18px;
+      background: transparent;
+      border: none;
+      border-radius: 5px;
+      padding-left: 10px;
+      color: white;
+    }
+
+    .btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.527);
+      padding: 9px 16px;
+      font-size: 15px;
+      font-weight: 300;
+      border-radius: 5px;
+      color: rgba(255, 254, 254, 0.527);
+    }
+
+    .terms {
+      color: rgba(255, 255, 255, 0.527);
+      width: 500px;
+      margin: 250px auto;
+      /* background: lightblue; */
+      text-align: center;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 13px;
+
+
+    }
+
+    .terms a {
+      color: rgb(52, 52, 243);
+    }
+
+
+    @media (max-width:675.98px) {
+
+
+      .form {
+        display: block;
+      }
+
+      .inner {
+        width: 90%;
+      }
+
+      .hero {
+        width: 100%;
+        text-align: center;
+      }
+
+      input {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .email {
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.527);
+
+      }
+
+      .terms {
+        width: 100%;
+      }
+
+
+      .btn {
+        width: 100%;
+      }
+
+      .rightarrow {
+        display: none;
+      }
+
+      .margin {
+        margin-left: 0;
+      }
+
+    }
+
+    .foot {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.527);
+      gap: 20px;
+      padding-bottom: 40px;
+      font-size: 15px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .foot a {
+      color: rgba(255, 255, 255, 0.527);
+      text-decoration: none;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="back">
+      <div class="inner">
+        <header class="head">
+          <div class="logo"><i class="fa-brands fa-github"></i></div>
+          <div class="sign">
+            <p>Already have an account? &nbsp; &nbsp;<span>Sign in <i class="fa-solid fa-arrow-right"></i></span></p>
+
+          </div>
+        </header>
+
+        <div class="hero">
+          <span class="text">Welcome to GitHub!
+            <br>
+            Let’s begin the adventure
+          </span>
+          <br>
+
+          <h3>Enter your email*</h3>
+          <br>
+          <div class="form" id="form">
+            <div>
+              <span class="rightarrow"><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+            <div>
+              <input type="email" name="" id="first" class="email">
+            
+            </div>
+            <div>
+              <input type="button" placeholder="" value="Continue" class="btn" id="btn1" onclick="test()">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="terms">
+          <p>By creating an account, you agree to the <span><a href="">Terms of Service</a></span>. For more information
+            about GitHub's privacy practices, see the <span><a href="">GitHub Privacy Statement</a></span>. We'll
+            occasionally send you account-related emails.</p>
+        </div>
+
+
+        <footer class="foot">
+          <div>
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <div>
+            &copy; 2024 Github, Inc.
+          </div>
+          <div>
+            <a href="">Terms</a>
+          </div>
+          <div>
+            <a href="">Privacy</a>
+          </div>
+          <div>
+            <a href="">Security</a>
+          </div>
+          <div>
+            <a href="">Status</a>
+          </div>
+          <div>
+            <a href="">Docs</a>
+          </div>
+          <div>
+            <a href="">Contact</a>
+          </div>
+          <div>
+            <a href="">Manage cookies</a>
+          </div>
+          <div>
+            <span>Do not share my personal information</span>
+          </div>
+          <div>
+
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const first_input = document.getElementById('first');
+    const form = document.getElementById('form');
+    const btn = document.getElementById('btn1')
+    console.log(first_input, btn1, form);
+
+
+
+
+
+
+
+
+
+
+    x=0
+
+
+    function test() {
+     x++
+     if (x<2)
+     {
+      input_ = document.createElement('input');
+        btn2 = document.createElement('button');
+        btn2.textContent = "Continue"
+        btn2.className = "btn"
+        input_.type = "password"
+        input_.style.marginTop = "10px"
+        span = document.createElement('span')
+        span.className = "fa-solid fa-arrow-right"
+        btn2.style.marginTop = "10px"
+        input_.className = "email";
+        input_.style.border = "1px solid white"
+        form.append(span);
+        form.append(input_);
+        form.append(btn2);
+
+        function test1()
+    {
+      input_ = document.createElement('input');
+      btn2 = document.createElement('button');
+      btn2.textContent = "Continue"
+      btn2.className = "btn"
+      input_.type = "text"
+    //   input_.placeHolder = "Username"
+      input_.style.marginTop = "10px"
+      span = document.createElement('span')
+      span.className = "fa-solid fa-arrow-right"
+      btn2.style.marginTop = "10px"
+      input_.className = "email";
+      input_.style.border = "1px solid white"
+      form.append(span);
+      form.append(input_);
+      form.append(btn2);
+    }
+    btn2.addEventListener("click",test1)
+
+     }
+    }
+
+   
+  </script>
+</body>
+
+</html>
+   
+     
+      
+       
+
+      
+
+
+
+    
+
+    
